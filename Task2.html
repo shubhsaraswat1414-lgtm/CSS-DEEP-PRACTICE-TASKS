@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Spacing & Flexbox – Basic Color Demo</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f8fafc;
+  padding:20px;
+}
+
+/* Section styling */
+.section{
+  padding:15px;
+  margin-bottom:30px;
+  border-left:6px solid #0f172a;
+  background:#e5e7eb;
+}
+h3{
+  margin-top:0;
+  color:#0f172a;
+}
+
+/* Boxes */
+.box{
+  width:150px;
+  border:2px solid #0f172a;
+  padding:10px;
+  background:#93c5fd;
+}
+.yellow{ background:#fde68a; }
+.green{ background:#86efac; }
+.red{ background:#fca5a5; }
+.purple{ background:#c4b5fd; }
+.orange{ background:#fdba74; }
+
+/* Small boxes */
+.small-box{
+  width:100px;
+  height:100px;
+  border:2px solid #0f172a;
+  background:#fcd34d;
+}
+
+/* Flex helpers */
+.flex{
+  display:flex;
+  border:2px dashed #475569;
+  padding:10px;
+  background:#f1f5f9;
+}
+.gap{ gap:20px; }
+.column{ flex-direction:column; }
+.center{
+  height:200px;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Inline */
+.inline span{
+  background:#fda4af;
+  padding:10px;
+  margin:10px;
+}
+.inline-block{
+  display:inline-block;
+  background:#86efac;
+}
+
+/* Auto margin */
+.auto{
+  margin-left:auto;
+  background:#fde68a;
+}
+
+/* Box sizing */
+.fixed{
+  width:150px;
+  padding:40px;
+  background:#fb7185;
+  border:2px solid #0f172a;
+}
+.borderbox{
+  box-sizing:border-box;
+  background:#4ade80;
+}
+
+/* Card */
+.card{
+  width:250px;
+  border:2px solid #0f172a;
+  background:white;
+}
+.card-content{
+  padding:15px;
+  background:#e0f2fe;
+}
+
+/* Button */
+button{
+  padding:15px;
+  margin:20px;
+  background:#38bdf8;
+  border:2px solid #0f172a;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+<h3>Task 1: Padding increases inside space</h3>
+<div class="box yellow" style="padding:20px;">Padding 20px</div><br>
+<div class="box yellow" style="padding:40px;">Padding 40px</div><br>
+<div class="box yellow" style="padding:80px;">Padding 80px</div>
+</div>
+
+<div class="section">
+<h3>Task 2: Margin creates outside space</h3>
+<div class="box green" style="margin:40px;">Margin 40px</div>
+</div>
+
+<div class="section">
+<h3>Task 3: Background vs Margin</h3>
+<div class="box purple" style="padding:30px;">Padding is colored</div>
+<div class="box purple" style="margin:30px;">Margin is empty</div>
+</div>
+
+<div class="section">
+<h3>Task 4: Side-specific values</h3>
+<div class="box orange" style="padding:10px 50px 30px 70px;">Padding TRBL</div>
+<div class="box orange" style="margin:60px 20px;">Margin TB | LR</div>
+</div>
+
+<div class="section">
+<h3>Task 5: Negative Margin</h3>
+<div class="box red" style="margin:-20px;">Negative margin pulls element</div>
+</div>
+
+<div class="section">
+<h3>Task 6: Margin Collapse</h3>
+<div class="box green" style="margin-bottom:50px;">Box 1</div>
+<div class="box yellow" style="margin-top:30px;">Box 2</div>
+</div>
+
+<div class="section">
+<h3>Task 7: Inline vs Inline-block</h3>
+<div class="inline">
+  <span>Inline span</span>
+  <span class="inline-block">Inline-block span</span>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 8: Flexbox layout</h3>
+<div class="flex gap">
+  <div class="box">One</div>
+  <div class="box">Two</div>
+  <div class="box">Three</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 9: Padding inside flex items</h3>
+<div class="flex gap">
+  <div class="box green" style="padding:30px;">More padding</div>
+  <div class="box green" style="padding:10px;">Less padding</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 10: Margin vs Gap</h3>
+<div class="flex">
+  <div class="box red" style="margin:20px;">Margin</div>
+  <div class="box red" style="margin:20px;">Margin</div>
+</div><br>
+<div class="flex gap">
+  <div class="box green">Gap</div>
+  <div class="box green">Gap</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 11: Main axis vs Cross axis</h3>
+<div class="flex gap">
+  <div class="box">Row</div>
+  <div class="box">Row</div>
+</div><br>
+<div class="flex column gap">
+  <div class="box">Column</div>
+  <div class="box">Column</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 12: justify-content</h3>
+<div class="flex" style="justify-content:space-between;">
+  <div class="box">Left</div>
+  <div class="box">Right</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 13: align-items</h3>
+<div class="flex center">
+  <div class="box purple" style="padding:40px;">Centered item</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 14: Auto Margin</h3>
+<div class="flex">
+  <div class="box">Item</div>
+  <div class="box auto">Auto</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 15: Button padding vs margin</h3>
+<button>Button</button>
+</div>
+
+<div class="section">
+<h3>Task 16: Card Component</h3>
+<div class="card">
+  <div class="card-content">
+    <h4>Title</h4>
+    <p>Padding inside card</p>
+    <button>Action</button>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 17: Box size illusion</h3>
+<div class="small-box" style="padding:30px;">Padding</div><br>
+<div class="small-box" style="margin:30px;">Margin</div>
+</div>
+
+<div class="section">
+<h3>Task 18: Box sizing</h3>
+<div class="fixed">Overflow</div><br>
+<div class="fixed borderbox">Border-box</div>
+</div>
+
+<div class="section">
+<h3>Task 19: Centering problem vs Flex</h3>
+<div class="box red" style="margin:auto;">Margin fails vertically</div><br>
+<div class="flex center">
+  <div class="box green">Flex centered</div>
+</div>
+</div>
+
+<div class="section">
+<h3>Task 20: Final Rules</h3>
+<ul>
+  <li>Padding = inside spacing</li>
+  <li>Margin = outside spacing</li>
+  <li>Flexbox = layout & alignment</li>
+</ul>
+</div>
+
+</body>
+</html>
